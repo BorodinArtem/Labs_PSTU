@@ -1,0 +1,450 @@
+#pragma once
+#include <glut.h>
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <sstream>
+using namespace std;
+int k;
+int** h;
+int* r;
+int*** matr;
+int WW;
+int WH;
+const int Size = 20;
+int a;
+template<class T>
+class Graph {	//класс графа
+	vector<T> Listv;
+	vector<T> Listl;
+	bool* vVerts = new bool[Listv.size()];
+public:
+	int adjectedMatrix[Size][Size] = { 0 };
+	Graph();
+	~Graph();
+	void DG();
+	void IE(const T& v1, const T& v2, int w);
+	void IV(const T& v);
+	void DV();
+	int GVP(const T& v);
+	bool IsEmpty();
+	bool IsFull();
+	int GAV();
+	int GAE();
+	int GW(const T& v1, const T& v2);
+	vector<T> GN(const T& v);
+	void Print();
+};
+int R;
+struct VC {	//структура координат
+	int x, y;
+};
+VC vertC[20];
+Graph<int> graph;
+void metod(int*** matr, int k, int** h, int* p) {	//метод ветвей и границ
+	for (int l = 0; l < k; l++) {
+		for (int i = 0; i < k; i++) {
+			int min = 1000000;
+			for (int j = 0; j < k; j++)
+				if (matr[i][j] && min > *matr[i][j])
+					min = *matr[i][j];
+			for (int j = 0; j < k; j++)
+				if (matr[i][j])
+					*matr[i][j] -= min;
+		}
+		for (int j = 0; j < k; j++) {
+			int min = 1000000;
+			for (int i = 0; i < k; i++)
+				if (matr[i][j] && min > *matr[i][j])
+					min = *matr[i][j];
+			for (int i = 0; i < k; i++)
+				if (matr[i][j])
+					*matr[i][j] -= min;
+		}
+		for (int i = 0; i < k; i++)
+			for (int j = 0; j < k; j++)
+				h[i][j] = 0;
+		for (int i = 0; i < k; i++)
+			for (int j = 0; j < k; j++) {
+				if (matr[i][j] && !*matr[i][j]) {
+					int hmin = 1000000;
+					int vmin = 1000000;
+
+					for (int l = 0; l < k; l++)
+						if (l != i && matr[l][j] && hmin > *matr[l][j])
+							hmin = *matr[l][j];
+
+					for (int l = 0; l < k; l++)
+						if (l != j && matr[i][l] && vmin > *matr[i][l])
+							vmin = *matr[i][l];
+
+					h[i][j] = hmin + vmin;
+				}
+			}
+		int mcost = 0, mi = 0, mj = 0;
+		for (int i = 0; i < k; i++)
+			for (int j = 0; j < k; j++)
+				if (matr[i][j] && mcost < h[i][j]) {
+					mcost = h[i][j];
+					mi = i;
+					mj = j;
+				}
+		p[mi] = mj;
+		for (int i = 0; i < k; i++)
+			matr[i][mj] = nullptr;
+		for (int i = 0; i < k; i++)
+			matr[mi][i] = nullptr;
+		matr[mj][mi] = nullptr;
+	}
+}
+void podgotovka(int***& matr, int& k, int**& h, int*& r) {	//функция подготовки
+	k = a;
+	h = new int* [k];
+	r = new int[k];
+	matr = new int** [k];
+	for (int i = 0; i <= k; i++) {
+		h[i] = new int[k];
+	}
+	for (int i = 0; i < k; i++) {
+		matr[i] = new int* [k];
+		for (int j = 0; j < k; j++)
+		{
+			if (graph.adjectedMatrix[i][j] == 0) {
+				matr[i][j] = nullptr;
+				continue;
+			}
+			matr[i][j] = new int(graph.adjectedMatrix[i][j]);
+		}
+	}
+}
+void Otvet(int*** matr, int k, int** h, int* r) {	//функция, отвечающая за нахождение минимального пути(ответа)
+	podgotovka(matr, k, h, r);
+	int s = 0;
+	metod(matr, k, h, r);
+	cout << endl << "Отрезки путей: ";
+	for (int i = 0, j = 0; i < k; i++) {
+		j = r[i];
+		cout << i + 1 << " -> " << j + 1 << '\t';
+		s += graph.adjectedMatrix[i][j];
+	}
+	cout << endl;
+	cout << endl << "Кратчайший путь: ";
+	int temp = 0;
+	for (int l = 0; l < k;)
+	{
+		for (int i = 0, j = 0; i < k; i++)
+		{
+			if (temp == 0 || i + 1 == temp)
+			{
+				if (temp == 0) cout << i + 1;
+				j = r[i];
+				temp = j + 1;
+				if (temp > 0)	cout << " -> " << temp;
+				l++;
+			}
+		}
+	}
+	cout << endl << "Расстояние: " << s;
+	cout << endl;
+}
+template<class T>
+std::vector<T> Graph<T>::GN(const T& v) {
+	std::vector<T> nbrsList;
+	int vPos = this->GVP(v);
+	if (vPos != (-1)) {
+		for (int i = 0, vListSize = this->vList.size(); i < vListSize; ++i) {
+			if (this->adjectedMatrix[vPos][i] != 0 &&
+				this->adjectedMatrix[i][vPos] != 0)
+				nbrsList.push_back(this->vList[i]);
+		}
+	}
+	return nbrsList;
+}
+template<class T>
+void Graph<T>::IV(const T& v) {
+	if (!this->IsFull()) {
+		this->Listv.push_back(v);
+	}
+	else {
+		cout << "Граф заполнен" << endl;
+		return;
+	}
+}
+template<class T>
+void Graph<T>::DV() {
+	this->vList.pop_back();
+}
+template<class T>
+int Graph<T>::GAE() {
+	int amount = 0;
+	if (!this->IsEmpty()) {
+		for (int i = 0, vListSize = this->vList.size();
+			i < vListSize; ++i) {
+			for (int j = 0; j < vListSize; ++j) {
+				if (this->adjetedMatrix[i][j] ==
+					this->adjectedMatrix[j][i] &&
+					this->adjectedMatrix[i][j] != 0)
+					amount += 1;
+			}
+		}
+		return (amount / 2);
+	}
+	else
+		return 0;
+}
+template<class T>
+int Graph<T>::GW(const T& v1, const T& v2) {
+	if (!this->IsEmpty()) {
+		int vPos1 = GVP(v1);
+		int vPos2 = GVP(v2);
+		return adjectedMatrix[vPos1][vPos2];
+	}
+	return 0;
+}
+template<class T>
+int Graph<T>::GAV() {
+	return this->vList.size();
+}
+template<class T>
+bool Graph<T>::IsEmpty() {
+	if (this->Listv.size() != 0)
+		return false;
+	else
+		return true;
+}
+template<class T>
+bool Graph<T>::IsFull() {
+	return (Listv.size() == Size);
+}
+template <class T>
+int Graph<T>::GVP(const T& v) {
+	for (int i = 0; i < this->Listv.size(); ++i) {
+		if (this->Listv[i] == v)
+			return i;
+	}
+	return -1;
+}
+template<class T>
+Graph<T>::Graph() {	//конструктор
+	for (int i = 0; i < Size; ++i) {
+		for (int j = 0; j < Size; ++j) {
+			this->adjectedMatrix[i][j] = 0;
+		}
+	}
+}
+template<class T>
+Graph<T>::~Graph() {	//деструктор
+}
+Graph<int> makeGraph() {
+	Graph<int> graph;
+	int amountEdges, sourceVertex, targetVertex, edgeWeight;
+	cout << "Количество вершин: "; cin >> a; cout << endl;
+	cout << "Количество ребер: "; cin >> amountEdges; cout << endl;
+	for (int i = 1; i <= a; ++i) {
+		int* vertPtr = &i;
+		graph.IV(*vertPtr);
+	}
+	for (int i = 0; i < amountEdges; ++i) {
+		cout << "Начало: "; cin >> sourceVertex; cout << endl;
+		int* sourceVertPtr = &sourceVertex;
+		cout << "Конец: "; cin >> targetVertex; cout << endl;
+		int* targetVertPtr = &targetVertex;
+		cout << "Вес: "; cin >> edgeWeight; cout << endl;
+		graph.IE(*sourceVertPtr, *targetVertPtr, edgeWeight);
+	}
+	cout << endl;
+	return graph;
+}
+template<class T>
+void Graph<T>::IE(const T& v1, const T& v2, int w) {
+	if (this->GVP(v1) != (-1) && this->GVP(v2) != (-1)) {
+		int vPos1 = GVP(v1);
+		int vPos2 = GVP(v2);
+		if (this->adjectedMatrix[vPos1][vPos2] != 0
+			&& this->adjectedMatrix[vPos2][vPos1] != 0) {
+			cout << "Ребро уже есть" << endl;
+			return;
+		}
+		else {
+			this->adjectedMatrix[vPos1][vPos2] = w;
+			this->adjectedMatrix[vPos2][vPos1] = w;
+		}
+	}
+	else {
+		cout << "Некоторые вершины отсутствуют" << endl;
+		return;
+	}
+}
+template<class T>
+void Graph<T>::Print() {
+	if (!this->IsEmpty()) {
+		cout << "Матрица: " << endl;
+		for (int i = 0, vListSize = this->Listv.size(); i < vListSize; ++i) {
+			cout << this->Listv[i] << " ";
+			for (int j = 0; j < vListSize; ++j) {
+				cout << " " << this->adjectedMatrix[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+}
+void setCoord(int i, int n) {	//функция, отвечающая за координаты вершин и радиусов
+	int R_;
+	int x0 = WW / 2;
+	int y0 = WH / 2;
+	if (WW > WH) {
+		R = 5 * (WH / 13) / n;
+		R_ = WH / 2 - R - 10;
+	}
+	else {
+		R = 5 * (WW / 13) / n;
+		R_ = WW / 2 - R - 10;
+	}
+	float theta = 2.0f * 3.1415926f * float(i) / float(n);
+	float y1 = R_ * cos(theta) + y0;
+	float x1 = R_ * sin(theta) + x0;
+	vertC[i].x = x1;
+	vertC[i].y = y1;
+}
+void drawCircle(int x, int y, int R) {	//функция, отвечающая за отображение круга
+	glColor3f(0.9, 0.9, 0.9);
+	float x1, y1;
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 360; i++) {
+		float theta = 2.0f * 3.1415926f * float(i) / float(360);
+		y1 = R * cos(theta) + y;
+		x1 = R * sin(theta) + x;;
+		glVertex2f(x1, y1);
+	}
+	glEnd();
+	glColor3f(0.0f, 0.0f, 0.0f);
+	float x2, y2;
+	glBegin(GL_LINE_LOOP);
+	for (int i = 0; i < 360; i++) {
+		float theta = 2.0f * 3.1415926f * float(i) / float(360);
+		y2 = R * cos(theta) + y;
+		x2 = R * sin(theta) + x;
+		glVertex2f(x2, y2);
+	}
+	glEnd();
+}
+void drawText(int nom, int x1, int y1) {	//функция, отвечающая за отображение текста на вершинах и ребрах
+	GLvoid* font = GLUT_BITMAP_HELVETICA_18;
+	string s = to_string(nom);
+	glRasterPos2i(x1 - 5, y1 - 5);
+	for (int j = 0; j < s.length(); j++)
+		glutBitmapCharacter(font, s[j]);
+}
+void drawVertex(int n) {	//функция, отвечающая за вершины
+	for (int i = 0; i < n; i++) {
+		drawCircle(vertC[i].x, vertC[i].y, R);
+		drawText(i + 1, vertC[i].x, vertC[i].y);
+	}
+}
+void drawLine(int text, int x0, int y0, int x1, int y1) {	//функция, отвечающая за отображение линий
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glBegin(GL_LINES);
+	glVertex2i(x0, y0);
+	glVertex2i(x1, y1);
+	glEnd();
+	drawText(text, (x0 + x1) / 2 + 10, (y0 + y1) / 2 + 10);
+}
+template<class T>
+void Graph<T>::DG() {	//отображение графа
+	int n = Listv.size();
+	for (int i = 0; i < n; i++) {
+		setCoord(i, n);
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			int a = adjectedMatrix[i][j];
+			if (a != 0) {
+				drawLine(a, vertC[i].x, vertC[i].y, vertC[j].x, vertC[j].y);
+			}
+		}
+	}
+	drawVertex(n);
+}
+void peredelka(int w, int h) {	//функция, отвечающая за 
+	WW = w;
+	WH = h;
+	glViewport(0, 0, (GLsizei)WW, (GLsizei)WH);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, (GLdouble)WW, 0, (GLdouble)WH);
+	glutPostRedisplay();
+}
+void drawMenuText(string text, int x1, int y1) {	//функция, отвечающая за отображение текста кнопок
+	GLvoid* font = GLUT_BITMAP_HELVETICA_18;
+	string s = text;
+	glRasterPos2i(x1 + 5, y1 - 20);
+	for (int j = 0; j < s.length(); j++)
+		glutBitmapCharacter(font, s[j]);
+}
+void drawMenu() {	//функция, отвечающая за отображение меню с кнопками
+	glColor3d(0.9, 0.9, 0.9);
+	glBegin(GL_QUADS);
+	glVertex2i(0, 155);
+	glVertex2i(155, 155);
+	glVertex2i(155, 20);
+	glVertex2i(0, 20);
+	glEnd();
+
+	glColor3d(0, 0.3, 0.5);
+	glBegin(GL_QUADS);
+	glVertex2i(10, 110);
+	glVertex2i(145, 110);
+	glVertex2i(145, 140);
+	glVertex2i(10, 140);
+	glEnd();
+	glColor3d(0.8, 1.0, 0.9);
+	drawMenuText("Matrix", 10, 138);
+
+	glColor3d(0, 0.3, 0.5);
+	glBegin(GL_QUADS);
+	glVertex2i(10, 70);
+	glVertex2i(145, 70);
+	glVertex2i(145, 100);
+	glVertex2i(10, 100);
+	glEnd();
+	glColor3d(0.8, 1.0, 0.9);
+	drawMenuText("Response", 10, 98);
+
+	glColor3d(0, 0.3, 0.5);
+	glBegin(GL_QUADS);
+	glVertex2i(10, 30);
+	glVertex2i(145, 30);
+	glVertex2i(145, 60);
+	glVertex2i(10, 60);
+	glEnd();
+	glColor3d(0.8, 1.0, 0.9);
+	drawMenuText("Recreate matrix", 10, 58);
+}
+void mouseClick(int btn, int stat, int x, int y) {	//функция для кнопок действий, триггерится кликом мыши
+	if (stat == GLUT_DOWN) {
+		if (x > 10 && x < 145 && y >  590 && y < 610) {
+			graph.Print();
+		}
+		if (x > 10 && x < 145 && y >  630 && y < 650) {
+			Otvet(matr, k, h, r);
+		}
+		if (x > 10 && x < 145 && y >  670 && y < 690) {
+			graph = makeGraph();
+		}
+	}
+	glutPostRedisplay();
+}
+void display() {	//Функция отображения главного окна
+	glShadeModel(GL_SMOOTH);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, WW, 0, WH);
+	glViewport(0, 0, WW, WH);
+	glClearColor(0.5 , 0.9, 0.9, 0.5);
+	glClear(GL_COLOR_BUFFER_BIT);
+	graph.DG();
+	drawMenu();
+	glutSwapBuffers();
+}
+void visual() {
+}
