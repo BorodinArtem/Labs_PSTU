@@ -10,7 +10,7 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// Г‘ГўГ®Г¤ГЄГ  Г¤Г«Гї MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -19,13 +19,13 @@ namespace Project1 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: Г¤Г®ГЎГ ГўГјГІГҐ ГЄГ®Г¤ ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°Г 
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// ГЋГ±ГўГ®ГЎГ®Г¤ГЁГІГј ГўГ±ГҐ ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГ¬Г»ГҐ Г°ГҐГ±ГіГ°Г±Г».
 		/// </summary>
 		~MyForm()
 		{
@@ -53,9 +53,9 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::MenuStrip^ menu;
-	private: System::Windows::Forms::ToolStripMenuItem^ темаToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ тёмнаяToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ оПрограммеToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ ГІГҐГ¬Г ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ ГІВёГ¬Г­Г ГїToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label10;
@@ -67,14 +67,14 @@ namespace Project1 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// ГЋГЎГїГ§Г ГІГҐГ«ГјГ­Г Гї ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°Г .
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// Г’Г°ГҐГЎГіГҐГ¬Г»Г© Г¬ГҐГІГ®Г¤ Г¤Г«Гї ГЇГ®Г¤Г¤ГҐГ°Г¦ГЄГЁ ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г°Г  вЂ” Г­ГҐ ГЁГ§Г¬ГҐГ­ГїГ©ГІГҐ 
+		/// Г±Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ ГЅГІГ®ГЈГ® Г¬ГҐГІГ®Г¤Г  Г± ГЇГ®Г¬Г®Г№ГјГѕ Г°ГҐГ¤Г ГЄГІГ®Г°Г  ГЄГ®Г¤Г .
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -96,9 +96,9 @@ namespace Project1 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->menu = (gcnew System::Windows::Forms::MenuStrip());
-			this->темаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->тёмнаяToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->оПрограммеToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ГІГҐГ¬Г ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ГІВёГ¬Г­Г ГїToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -174,12 +174,12 @@ namespace Project1 {
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Сложение", L"Вычитание", L"Умножение", L"Деление" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ", L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ", L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ", L"Г„ГҐГ«ГҐГ­ГЁГҐ" });
 			this->comboBox1->Location = System::Drawing::Point(243, 24);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(112, 28);
 			this->comboBox1->TabIndex = 7;
-			this->comboBox1->Text = L"Сложение";
+			this->comboBox1->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 			// 
 			// label1
 			// 
@@ -190,7 +190,7 @@ namespace Project1 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(121, 20);
 			this->label1->TabIndex = 8;
-			this->label1->Text = L"Первая дробь:";
+			this->label1->Text = L"ГЏГҐГ°ГўГ Гї Г¤Г°Г®ГЎГј:";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
 			// 
 			// label2
@@ -202,7 +202,7 @@ namespace Project1 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(120, 20);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"Вторая дробь:";
+			this->label2->Text = L"Г‚ГІГ®Г°Г Гї Г¤Г°Г®ГЎГј:";
 			// 
 			// label3
 			// 
@@ -213,7 +213,7 @@ namespace Project1 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(98, 20);
 			this->label3->TabIndex = 10;
-			this->label3->Text = L"Числитель:";
+			this->label3->Text = L"Г—ГЁГ±Г«ГЁГІГҐГ«Гј:";
 			// 
 			// label4
 			// 
@@ -224,7 +224,7 @@ namespace Project1 {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(117, 20);
 			this->label4->TabIndex = 11;
-			this->label4->Text = L"Знаменатель:";
+			this->label4->Text = L"Г‡Г­Г Г¬ГҐГ­Г ГІГҐГ«Гј:";
 			// 
 			// label5
 			// 
@@ -235,7 +235,7 @@ namespace Project1 {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(103, 20);
 			this->label5->TabIndex = 12;
-			this->label5->Text = L"Результат:";
+			this->label5->Text = L"ГђГҐГ§ГіГ«ГјГІГ ГІ:";
 			// 
 			// label6
 			// 
@@ -246,7 +246,7 @@ namespace Project1 {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(122, 25);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"Сложение";
+			this->label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
 			// 
 			// label7
@@ -258,7 +258,7 @@ namespace Project1 {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(110, 20);
 			this->label7->TabIndex = 14;
-			this->label7->Text = L"Целая часть:";
+			this->label7->Text = L"Г–ГҐГ«Г Гї Г·Г Г±ГІГј:";
 			// 
 			// button1
 			// 
@@ -269,7 +269,7 @@ namespace Project1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(104, 32);
 			this->button1->TabIndex = 15;
-			this->button1->Text = L"Вычислить";
+			this->button1->Text = L"Г‚Г»Г·ГЁГ±Г«ГЁГІГј";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -282,7 +282,7 @@ namespace Project1 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(104, 33);
 			this->button2->TabIndex = 16;
-			this->button2->Text = L"Сбросить";
+			this->button2->Text = L"Г‘ГЎГ°Г®Г±ГЁГІГј";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -290,8 +290,8 @@ namespace Project1 {
 			// 
 			this->menu->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->темаToolStripMenuItem,
-					this->оПрограммеToolStripMenuItem
+				this->ГІГҐГ¬Г ToolStripMenuItem,
+					this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem
 			});
 			this->menu->Location = System::Drawing::Point(0, 0);
 			this->menu->Name = L"menu";
@@ -299,27 +299,27 @@ namespace Project1 {
 			this->menu->TabIndex = 17;
 			this->menu->Text = L"menu";
 			// 
-			// темаToolStripMenuItem
+			// ГІГҐГ¬Г ToolStripMenuItem
 			// 
-			this->темаToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->тёмнаяToolStripMenuItem });
-			this->темаToolStripMenuItem->Name = L"темаToolStripMenuItem";
-			this->темаToolStripMenuItem->Size = System::Drawing::Size(65, 20);
-			this->темаToolStripMenuItem->Text = L"Справка";
+			this->ГІГҐГ¬Г ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ГІВёГ¬Г­Г ГїToolStripMenuItem });
+			this->ГІГҐГ¬Г ToolStripMenuItem->Name = L"ГІГҐГ¬Г ToolStripMenuItem";
+			this->ГІГҐГ¬Г ToolStripMenuItem->Size = System::Drawing::Size(65, 20);
+			this->ГІГҐГ¬Г ToolStripMenuItem->Text = L"Г‘ГЇГ°Г ГўГЄГ ";
 			// 
-			// тёмнаяToolStripMenuItem
+			// ГІВёГ¬Г­Г ГїToolStripMenuItem
 			// 
-			this->тёмнаяToolStripMenuItem->Name = L"тёмнаяToolStripMenuItem";
-			this->тёмнаяToolStripMenuItem->Size = System::Drawing::Size(215, 22);
-			this->тёмнаяToolStripMenuItem->Text = L"Информационная сводка";
-			this->тёмнаяToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::тёмнаяToolStripMenuItem_Click);
+			this->ГІВёГ¬Г­Г ГїToolStripMenuItem->Name = L"ГІВёГ¬Г­Г ГїToolStripMenuItem";
+			this->ГІВёГ¬Г­Г ГїToolStripMenuItem->Size = System::Drawing::Size(215, 22);
+			this->ГІВёГ¬Г­Г ГїToolStripMenuItem->Text = L"Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г Гї Г±ГўГ®Г¤ГЄГ ";
+			this->ГІВёГ¬Г­Г ГїToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ГІВёГ¬Г­Г ГїToolStripMenuItem_Click);
 			// 
-			// оПрограммеToolStripMenuItem
+			// Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem
 			// 
-			this->оПрограммеToolStripMenuItem->CheckOnClick = true;
-			this->оПрограммеToolStripMenuItem->Name = L"оПрограммеToolStripMenuItem";
-			this->оПрограммеToolStripMenuItem->Size = System::Drawing::Size(94, 20);
-			this->оПрограммеToolStripMenuItem->Text = L"О программе";
-			this->оПрограммеToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::оПрограммеToolStripMenuItem_Click);
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem->CheckOnClick = true;
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem->Name = L"Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem";
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem->Size = System::Drawing::Size(94, 20);
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem->Text = L"ГЋ ГЇГ°Г®ГЈГ°Г Г¬Г¬ГҐ";
+			this->Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem_Click);
 			// 
 			// label8
 			// 
@@ -330,7 +330,7 @@ namespace Project1 {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(110, 20);
 			this->label8->TabIndex = 18;
-			this->label8->Text = L"Целая часть:";
+			this->label8->Text = L"Г–ГҐГ«Г Гї Г·Г Г±ГІГј:";
 			// 
 			// label9
 			// 
@@ -341,7 +341,7 @@ namespace Project1 {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(98, 20);
 			this->label9->TabIndex = 19;
-			this->label9->Text = L"Числитель:";
+			this->label9->Text = L"Г—ГЁГ±Г«ГЁГІГҐГ«Гј:";
 			// 
 			// label10
 			// 
@@ -352,7 +352,7 @@ namespace Project1 {
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(117, 20);
 			this->label10->TabIndex = 20;
-			this->label10->Text = L"Знаменатель:";
+			this->label10->Text = L"Г‡Г­Г Г¬ГҐГ­Г ГІГҐГ«Гј:";
 			// 
 			// MyForm
 			// 
@@ -386,7 +386,7 @@ namespace Project1 {
 			this->MinimumSize = System::Drawing::Size(840, 250);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Калькулятор";
+			this->Text = L"ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г°";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing);
 			this->menu->ResumeLayout(false);
 			this->menu->PerformLayout();
@@ -400,7 +400,7 @@ namespace Project1 {
 	}
 	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-		   //проверка на ввод других символов кроме цифр и минуса
+		   //ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГўГўГ®Г¤ Г¤Г°ГіГЈГЁГµ Г±ГЁГ¬ГўГ®Г«Г®Гў ГЄГ°Г®Г¬ГҐ Г¶ГЁГґГ° ГЁ Г¬ГЁГ­ГіГ±Г 
 		   bool flag = true;
 		   bool Protect() {
 			   if ((textBox1->Text->Length == 0) || (textBox2->Text->Length == 0) || (textBox3->Text->Length == 0) ||
@@ -410,37 +410,37 @@ namespace Project1 {
 			   for (int i = 0; i < textBox1->Text->Length; i++) {
 				   if ((textBox1->Text[i] >= '0') && (textBox1->Text[i] <= '9') || (textBox1->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   for (int i = 0; i < textBox2->Text->Length; i++) {
 				   if ((textBox2->Text[i] >= '0') && (textBox2->Text[i] <= '9') || (textBox2->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   for (int i = 0; i < textBox3->Text->Length; i++) {
 				   if ((textBox3->Text[i] >= '0') && (textBox3->Text[i] <= '9') || (textBox3->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   for (int i = 0; i < textBox4->Text->Length; i++) {
 				   if ((textBox4->Text[i] >= '0') && (textBox4->Text[i] <= '9') || (textBox4->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   for (int i = 0; i < textBox6->Text->Length; i++) {
 				   if ((textBox6->Text[i] >= '0') && (textBox6->Text[i] <= '9') || (textBox6->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   for (int i = 0; i < textBox7->Text->Length; i++) {
 				   if ((textBox7->Text[i] >= '0') && (textBox7->Text[i] <= '9') || (textBox7->Text[i] == '-')) {
 				   }
-				   else { MessageBox::Show("Ошибка ввода!", "Ошибка!"); flag = false; return false; }
+				   else { MessageBox::Show("ГЋГёГЁГЎГЄГ  ГўГўГ®Г¤Г !", "ГЋГёГЁГЎГЄГ !"); flag = false; return false; }
 			   }
 			   return true;
 		   }
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		//основа программы-совершает действия между дробями и выводит результат, во всех случаях деления на ноль выводит соответствующее сообщение об ошибке
+		//Г®Г±Г­Г®ГўГ  ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»-Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГҐГ©Г±ГІГўГЁГї Г¬ГҐГ¦Г¤Гі Г¤Г°Г®ГЎГїГ¬ГЁ ГЁ ГўГ»ГўГ®Г¤ГЁГІ Г°ГҐГ§ГіГ«ГјГІГ ГІ, ГўГ® ГўГ±ГҐГµ Г±Г«ГіГ·Г ГїГµ Г¤ГҐГ«ГҐГ­ГЁГї Г­Г  Г­Г®Г«Гј ГўГ»ГўГ®Г¤ГЁГІ Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГѕГ№ГҐГҐ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г®ГЎ Г®ГёГЁГЎГЄГҐ
 		if (Protect()) {
 			double Num1, Num2, Num3, Num4, x1, x2, Otvet;
 			Num1 = System::Convert::ToDouble(textBox1->Text);
@@ -449,11 +449,11 @@ namespace Project1 {
 			Num4 = System::Convert::ToDouble(textBox4->Text);
 			x1 = System::Convert::ToDouble(textBox6->Text);
 			x2 = System::Convert::ToDouble(textBox7->Text);
-			if (comboBox1->SelectedItem == "Сложение") {
-				label6->Text = L"Сложение";
+			if (comboBox1->SelectedItem == "Г‘Г«Г®Г¦ГҐГ­ГЁГҐ") {
+				label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 				if (x1 == 0 && x2 == 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						Num1 = Num1 * Num4;
@@ -465,17 +465,17 @@ namespace Project1 {
 				}
 				else if (x1 != 0 && x2 != 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x1 < 0 && x2 > 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) / Num2;
 							Num3 = ((x2 * Num4) + Num3) / Num4;
 							Otvet = (Num1 + Num3);
 						}
 						if (x1 > 0 && x2 < 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -483,7 +483,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) + (Num3 / Num4);
 						}
 						if (x1 < 0 && x2 < 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -491,7 +491,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) + (Num3 / Num4);
 						}
 						else if (x1 > 0 && x2 > 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -502,11 +502,11 @@ namespace Project1 {
 				}
 				else if (x1 == 0 && x2 != 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x2 < 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Num2 = Num2 * Num4;
@@ -514,7 +514,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) + (Num3 / Num4);
 						}
 						else if (x2 > 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Num2 = Num2 * Num4;
@@ -525,11 +525,11 @@ namespace Project1 {
 				}
 				else if (x1 != 0 && x2 == 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x1 < 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = Num3 * Num2;
 							Num2 = Num2 * Num4;
@@ -537,7 +537,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) + (Num3 / Num4);
 						}
 						else if (x1 > 0) {
-							label6->Text = L"Сложение";
+							label6->Text = L"Г‘Г«Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = Num3 * Num2;
 							Num2 = Num2 * Num4;
@@ -547,11 +547,11 @@ namespace Project1 {
 					}
 				}
 			}
-			else if (comboBox1->SelectedItem == "Вычитание") {
-				label6->Text = L"Вычитание";
+			else if (comboBox1->SelectedItem == "Г‚Г»Г·ГЁГІГ Г­ГЁГҐ") {
+				label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 				if (x1 == 0 && x2 == 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						Num1 = Num1 * Num4;
@@ -563,11 +563,11 @@ namespace Project1 {
 				}
 				else if (x1 != 0 && x2 != 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x1 < 0 && x2 > 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -575,7 +575,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) - (Num3 / Num4);
 						}
 						if (x1 > 0 && x2 < 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -583,7 +583,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) - (Num3 / Num4);
 						}
 						if (x1 < 0 && x2 < 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -591,7 +591,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) - (Num3 / Num4);
 						}
 						else if (x1 > 0 && x2 > 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num2 = Num2 * Num4;
@@ -602,11 +602,11 @@ namespace Project1 {
 				}
 				else if (x1 == 0 && x2 != 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x2 < 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Num2 = Num2 * Num4;
@@ -614,7 +614,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) - (Num3 / Num4);
 						}
 						else if (x2 > 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Num2 = Num2 * Num4;
@@ -625,11 +625,11 @@ namespace Project1 {
 				}
 				else if (x1 != 0 && x2 == 0) {
 					if (Num2 == 0 || Num4 == 0) {
-						MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return;
+						MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return;
 					}
 					else {
 						if (x1 < 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = Num3 * Num2;
 							Num2 = Num2 * Num4;
@@ -637,7 +637,7 @@ namespace Project1 {
 							Otvet = (Num1 / Num2) - (Num3 / Num4);
 						}
 						else if (x1 > 0) {
-							label6->Text = L"Вычитание";
+							label6->Text = L"Г‚Г»Г·ГЁГІГ Г­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = Num3 * Num2;
 							Num2 = Num2 * Num4;
@@ -647,20 +647,20 @@ namespace Project1 {
 					}
 				}
 			}
-			else if (comboBox1->SelectedItem == "Умножение") {
+			else if (comboBox1->SelectedItem == "Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ") {
 				if (x1 == 0 && x2 == 0) {
 					Num1 = Num1 * Num3;
 					Num2 = Num2 * Num4;
 					if (Num2 != 0) {
-						label6->Text = L"Умножение";
+						label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 						Otvet = (Num1 / Num2);
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 != 0 && x2 != 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x1 < 0 && x2 > 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1);
 							Num3 = ((x2 * Num4) + Num3) * Num1;
 							Num2 = Num2 * Num4;
@@ -668,7 +668,7 @@ namespace Project1 {
 							Otvet = (Num3 / Num2);
 						}
 						else if (x1 > 0 && x2 < 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1);
 							Num3 = ((x2 * Num4) - Num3) * Num1;
 							Num2 = Num2 * Num4;
@@ -676,7 +676,7 @@ namespace Project1 {
 							Otvet = (Num3 / Num2);
 						}
 						else if (x1 < 0 && x2 < 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1);
 							Num3 = ((x2 * Num4) - Num3) * Num1;
 							Num2 = Num2 * Num4;
@@ -684,7 +684,7 @@ namespace Project1 {
 							Otvet = (Num3 / Num2);
 						}
 						else if (x1 > 0 && x2 > 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1);
 							Num3 = ((x2 * Num4) + Num3) * Num1;
 							Num2 = Num2 * Num4;
@@ -692,128 +692,128 @@ namespace Project1 {
 							Otvet = (Num3 / Num2);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 == 0 && x2 != 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x2 < 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) - Num3) * Num1;
 							Num2 = Num2 * Num4;
 							Num4 = Num2;
 							Otvet = (Num3 / Num2);
 						}
 						else if (x2 > 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) + Num3) * Num1;
 							Num2 = Num2 * Num4;
 							Num4 = Num2;
 							Otvet = (Num3 / Num2);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 != 0 && x2 == 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x1 < 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num3;
 							Num2 = Num2 * Num4;
 							Num4 = Num2;
 							Otvet = (Num1 / Num2);
 						}
 						else if (x1 > 0) {
-							label6->Text = L"Умножение";
+							label6->Text = L"Г“Г¬Г­Г®Г¦ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num3;
 							Num2 = Num2 * Num4;
 							Num4 = Num2;
 							Otvet = (Num1 / Num2);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 			}
-			else if (comboBox1->SelectedItem == "Деление") {
+			else if (comboBox1->SelectedItem == "Г„ГҐГ«ГҐГ­ГЁГҐ") {
 				if (x1 == 0 && x2 == 0) {
 					if (Num2 != 0 && Num4 != 0) {
-						label6->Text = L"Деление";
+						label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 						Num1 = Num1 * Num4;
 						Num2 = Num2 * Num3;
 						Otvet = (Num1 / Num2);
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 != 0 && x2 != 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x1 < 0 && x2 > 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Otvet = (Num1 / Num3);
 						}
 						else if (x2 < 0 && x1 > 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Otvet = (Num1 / Num3);
 						}
 						else if (x1 < 0 && x2 < 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Otvet = (Num1 / Num3);
 						}
 						else if (x1 > 0 && x2 > 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Otvet = (Num1 / Num3);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 != 0 && x2 == 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x1 < 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) - Num1) * Num4;
 							Num2 = Num2 * Num3;
 							Otvet = (Num1 / Num2);
 						}
 						else if (x1 > 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num1 = ((x1 * Num2) + Num1) * Num4;
 							Num2 = Num2 * Num3;
 							Otvet = (Num1 / Num2);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 				else if (x1 == 0 && x2 != 0) {
 					if (Num2 != 0 && Num4 != 0) {
 						if (x2 < 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) - Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Otvet = (Num1 / Num3);
 						}
 						else if (x2 > 0) {
-							label6->Text = L"Деление";
+							label6->Text = L"Г„ГҐГ«ГҐГ­ГЁГҐ";
 							Num3 = ((x2 * Num4) + Num3) * Num2;
 							Num1 = Num1 * Num4;
 							Otvet = (Num1 / Num3);
 						}
 					}
-					else { MessageBox::Show("На ноль делить нельзя!", "Ошибка!"); return; }
+					else { MessageBox::Show("ГЌГ  Г­Г®Г«Гј Г¤ГҐГ«ГЁГІГј Г­ГҐГ«ГјГ§Гї!", "ГЋГёГЁГЎГЄГ !"); return; }
 				}
 			}
 			textBox5->Text = System::Convert::ToString(Otvet);
 		}
 		else if (flag == false) { flag = true; return; }
-		else { MessageBox::Show("Заполните поля!", "Ошибка!"); }	//сообщение о пустоте полей
+		else { MessageBox::Show("Г‡Г ГЇГ®Г«Г­ГЁГІГҐ ГЇГ®Г«Гї!", "ГЋГёГЁГЎГЄГ !"); }	//Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г® ГЇГіГ±ГІГ®ГІГҐ ГЇГ®Г«ГҐГ©
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		//работа кнопки очистки
+		//Г°Г ГЎГ®ГІГ  ГЄГ­Г®ГЇГЄГЁ Г®Г·ГЁГ±ГІГЄГЁ
 		textBox1->Text = L"";
 		textBox2->Text = L"";
 		textBox3->Text = L"";
@@ -823,15 +823,15 @@ namespace Project1 {
 		textBox7->Text = L"";
 		label6->Text = L"";
 	}
-	private: System::Void тёмнаяToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Творческая работа-калькулятор\n" "Бородин А.А.\n" "ИВТ - 21 - 2б\n" "ПНИПУ\n ", "Информационная сводка");	//текст в кнопке информации о творческой работе
+	private: System::Void ГІВёГ¬Г­Г ГїToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("Г’ГўГ®Г°Г·ГҐГ±ГЄГ Гї Г°Г ГЎГ®ГІГ -ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г°\n" "ГЃГ®Г°Г®Г¤ГЁГ­ ГЂ.ГЂ.\n" "Г€Г‚Г’ - 21 - 2ГЎ\n" "ГЏГЌГ€ГЏГ“\n ", "Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г Гї Г±ГўГ®Г¤ГЄГ ");	//ГІГҐГЄГ±ГІ Гў ГЄГ­Г®ГЇГЄГҐ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® ГІГўГ®Г°Г·ГҐГ±ГЄГ®Г© Г°Г ГЎГ®ГІГҐ
 	}
-	private: System::Void оПрограммеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Калькулятор обычных дробей с целыми частями", "О программе");	//текст в кнопке о калькуляторе
+	private: System::Void Г®ГЏГ°Г®ГЈГ°Г Г¬Г¬ГҐToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г° Г®ГЎГ»Г·Г­Г»Гµ Г¤Г°Г®ГЎГҐГ© Г± Г¶ГҐГ«Г»Г¬ГЁ Г·Г Г±ГІГїГ¬ГЁ", "ГЋ ГЇГ°Г®ГЈГ°Г Г¬Г¬ГҐ");	//ГІГҐГЄГ±ГІ Гў ГЄГ­Г®ГЇГЄГҐ Г® ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г°ГҐ
 	}
 	private: System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		//реализация меню выхода из программы
-		if (MessageBox::Show("Выход", "Выход из программы", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::No) {
+		//Г°ГҐГ Г«ГЁГ§Г Г¶ГЁГї Г¬ГҐГ­Гѕ ГўГ»ГµГ®Г¤Г  ГЁГ§ ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»
+		if (MessageBox::Show("Г‚Г»ГµГ®Г¤", "Г‚Г»ГµГ®Г¤ ГЁГ§ ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::No) {
 			e->Cancel = true;
 		}
 		else { e->Cancel = false; }
