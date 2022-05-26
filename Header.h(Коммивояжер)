@@ -14,7 +14,7 @@ int WH;
 const int Size = 20;
 int a;
 template<class T>
-class Graph {	//êëàññ ãðàôà
+class Graph {	//класс графа
 	vector<T> Listv;
 	vector<T> Listl;
 	bool* vVerts = new bool[Listv.size()];
@@ -36,12 +36,12 @@ public:
 	void Print();
 };
 int R;
-struct VC {	//ñòðóêòóðà êîîðäèíàò
+struct VC {	//структура координат
 	int x, y;
 };
 VC vertC[20];
 Graph<int> graph;
-void metod(int*** matr, int k, int** h, int* p) {	//ìåòîä âåòâåé è ãðàíèö
+void metod(int*** matr, int k, int** h, int* p) {	//метод ветвей и границ
 	for (int l = 0; l < k; l++) {
 		for (int i = 0; i < k; i++) {
 			int min = 1000000;
@@ -97,7 +97,7 @@ void metod(int*** matr, int k, int** h, int* p) {	//ìåòîä âåòâåé è �
 		matr[mj][mi] = nullptr;
 	}
 }
-void podgotovka(int***& matr, int& k, int**& h, int*& r) {	//ôóíêöèÿ ïîäãîòîâêè
+void podgotovka(int***& matr, int& k, int**& h, int*& r) {	//функция подготовки
 	k = a;
 	h = new int* [k];
 	r = new int[k];
@@ -117,18 +117,18 @@ void podgotovka(int***& matr, int& k, int**& h, int*& r) {	//ôóíêöèÿ ïî
 		}
 	}
 }
-void Otvet(int*** matr, int k, int** h, int* r) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà íàõîæäåíèå ìèíèìàëüíîãî ïóòè(îòâåòà)
+void Otvet(int*** matr, int k, int** h, int* r) {	//функция, отвечающая за нахождение минимального пути(ответа)
 	podgotovka(matr, k, h, r);
 	int s = 0;
 	metod(matr, k, h, r);
-	cout << endl << "Îòðåçêè ïóòåé: ";
+	cout << endl << "Отрезки путей: ";
 	for (int i = 0, j = 0; i < k; i++) {
 		j = r[i];
 		cout << i + 1 << " -> " << j + 1 << '\t';
 		s += graph.adjectedMatrix[i][j];
 	}
 	cout << endl;
-	cout << endl << "Êðàò÷àéøèé ïóòü: ";
+	cout << endl << "Кратчайший путь: ";
 	int temp = 0;
 	for (int l = 0; l < k;)
 	{
@@ -144,7 +144,7 @@ void Otvet(int*** matr, int k, int** h, int* r) {	//ôóíêöèÿ, îòâå÷à
 			}
 		}
 	}
-	cout << endl << "Ðàññòîÿíèå: " << s;
+	cout << endl << "Расстояние: " << s;
 	cout << endl;
 }
 template<class T>
@@ -166,7 +166,7 @@ void Graph<T>::IV(const T& v) {
 		this->Listv.push_back(v);
 	}
 	else {
-		cout << "Ãðàô çàïîëíåí" << endl;
+		cout << "Граф заполнен" << endl;
 		return;
 	}
 }
@@ -225,7 +225,7 @@ int Graph<T>::GVP(const T& v) {
 	return -1;
 }
 template<class T>
-Graph<T>::Graph() {	//êîíñòðóêòîð
+Graph<T>::Graph() {	//конструктор
 	for (int i = 0; i < Size; ++i) {
 		for (int j = 0; j < Size; ++j) {
 			this->adjectedMatrix[i][j] = 0;
@@ -233,23 +233,23 @@ Graph<T>::Graph() {	//êîíñòðóêòîð
 	}
 }
 template<class T>
-Graph<T>::~Graph() {	//äåñòðóêòîð
+Graph<T>::~Graph() {	//деструктор
 }
 Graph<int> makeGraph() {
 	Graph<int> graph;
 	int amountEdges, sourceVertex, targetVertex, edgeWeight;
-	cout << "Êîëè÷åñòâî âåðøèí: "; cin >> a; cout << endl;
-	cout << "Êîëè÷åñòâî ðåáåð: "; cin >> amountEdges; cout << endl;
+	cout << "Количество вершин: "; cin >> a; cout << endl;
+	cout << "Количество ребер: "; cin >> amountEdges; cout << endl;
 	for (int i = 1; i <= a; ++i) {
 		int* vertPtr = &i;
 		graph.IV(*vertPtr);
 	}
 	for (int i = 0; i < amountEdges; ++i) {
-		cout << "Íà÷àëî: "; cin >> sourceVertex; cout << endl;
+		cout << "Начало: "; cin >> sourceVertex; cout << endl;
 		int* sourceVertPtr = &sourceVertex;
-		cout << "Êîíåö: "; cin >> targetVertex; cout << endl;
+		cout << "Конец: "; cin >> targetVertex; cout << endl;
 		int* targetVertPtr = &targetVertex;
-		cout << "Âåñ: "; cin >> edgeWeight; cout << endl;
+		cout << "Вес: "; cin >> edgeWeight; cout << endl;
 		graph.IE(*sourceVertPtr, *targetVertPtr, edgeWeight);
 	}
 	cout << endl;
@@ -262,7 +262,7 @@ void Graph<T>::IE(const T& v1, const T& v2, int w) {
 		int vPos2 = GVP(v2);
 		if (this->adjectedMatrix[vPos1][vPos2] != 0
 			&& this->adjectedMatrix[vPos2][vPos1] != 0) {
-			cout << "Ðåáðî óæå åñòü" << endl;
+			cout << "Ребро уже есть" << endl;
 			return;
 		}
 		else {
@@ -271,14 +271,14 @@ void Graph<T>::IE(const T& v1, const T& v2, int w) {
 		}
 	}
 	else {
-		cout << "Íåêîòîðûå âåðøèíû îòñóòñòâóþò" << endl;
+		cout << "Некоторые вершины отсутствуют" << endl;
 		return;
 	}
 }
 template<class T>
 void Graph<T>::Print() {
 	if (!this->IsEmpty()) {
-		cout << "Ìàòðèöà: " << endl;
+		cout << "Матрица: " << endl;
 		for (int i = 0, vListSize = this->Listv.size(); i < vListSize; ++i) {
 			cout << this->Listv[i] << " ";
 			for (int j = 0; j < vListSize; ++j) {
@@ -288,7 +288,7 @@ void Graph<T>::Print() {
 		}
 	}
 }
-void setCoord(int i, int n) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà êîîðäèíàòû âåðøèí è ðàäèóñîâ
+void setCoord(int i, int n) {	//функция, отвечающая за координаты вершин и радиусов
 	int R_;
 	int x0 = WW / 2;
 	int y0 = WH / 2;
@@ -306,7 +306,7 @@ void setCoord(int i, int n) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà êîî
 	vertC[i].x = x1;
 	vertC[i].y = y1;
 }
-void drawCircle(int x, int y, int R) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåíèå êðóãà
+void drawCircle(int x, int y, int R) {	//функция, отвечающая за отображение круга
 	glColor3f(0.9, 0.9, 0.9);
 	float x1, y1;
 	glBegin(GL_POLYGON);
@@ -328,20 +328,20 @@ void drawCircle(int x, int y, int R) {	//ôóíêöèÿ, îòâå÷àþùàÿ ç
 	}
 	glEnd();
 }
-void drawText(int nom, int x1, int y1) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåíèå òåêñòà íà âåðøèíàõ è ðåáðàõ
+void drawText(int nom, int x1, int y1) {	//функция, отвечающая за отображение текста на вершинах и ребрах
 	GLvoid* font = GLUT_BITMAP_HELVETICA_18;
 	string s = to_string(nom);
 	glRasterPos2i(x1 - 5, y1 - 5);
 	for (int j = 0; j < s.length(); j++)
 		glutBitmapCharacter(font, s[j]);
 }
-void drawVertex(int n) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà âåðøèíû
+void drawVertex(int n) {	//функция, отвечающая за вершины
 	for (int i = 0; i < n; i++) {
 		drawCircle(vertC[i].x, vertC[i].y, R);
 		drawText(i + 1, vertC[i].x, vertC[i].y);
 	}
 }
-void drawLine(int text, int x0, int y0, int x1, int y1) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåíèå ëèíèé
+void drawLine(int text, int x0, int y0, int x1, int y1) {	//функция, отвечающая за отображение линий
 	glColor3f(0.0f, 0.0f, 0.0f);
 	glBegin(GL_LINES);
 	glVertex2i(x0, y0);
@@ -350,7 +350,7 @@ void drawLine(int text, int x0, int y0, int x1, int y1) {	//ôóíêöèÿ, îò
 	drawText(text, (x0 + x1) / 2 + 10, (y0 + y1) / 2 + 10);
 }
 template<class T>
-void Graph<T>::DG() {	//îòîáðàæåíèå ãðàôà
+void Graph<T>::DG() {	//отображение графа
 	int n = Listv.size();
 	for (int i = 0; i < n; i++) {
 		setCoord(i, n);
@@ -365,7 +365,7 @@ void Graph<T>::DG() {	//îòîáðàæåíèå ãðàôà
 	}
 	drawVertex(n);
 }
-void peredelka(int w, int h) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà 
+void peredelka(int w, int h) {	//функция, отвечающая за 
 	WW = w;
 	WH = h;
 	glViewport(0, 0, (GLsizei)WW, (GLsizei)WH);
@@ -374,14 +374,14 @@ void peredelka(int w, int h) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà
 	gluOrtho2D(0, (GLdouble)WW, 0, (GLdouble)WH);
 	glutPostRedisplay();
 }
-void drawMenuText(string text, int x1, int y1) {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåíèå òåêñòà êíîïîê
+void drawMenuText(string text, int x1, int y1) {	//функция, отвечающая за отображение текста кнопок
 	GLvoid* font = GLUT_BITMAP_HELVETICA_18;
 	string s = text;
 	glRasterPos2i(x1 + 5, y1 - 20);
 	for (int j = 0; j < s.length(); j++)
 		glutBitmapCharacter(font, s[j]);
 }
-void drawMenu() {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåíèå ìåíþ ñ êíîïêàìè
+void drawMenu() {	//функция, отвечающая за отображение меню с кнопками
 	glColor3d(0.9, 0.9, 0.9);
 	glBegin(GL_QUADS);
 	glVertex2i(0, 155);
@@ -420,7 +420,7 @@ void drawMenu() {	//ôóíêöèÿ, îòâå÷àþùàÿ çà îòîáðàæåí
 	glColor3d(0.8, 1.0, 0.9);
 	drawMenuText("Recreate matrix", 10, 58);
 }
-void mouseClick(int btn, int stat, int x, int y) {	//ôóíêöèÿ äëÿ êíîïîê äåéñòâèé, òðèããåðèòñÿ êëèêîì ìûøè
+void mouseClick(int btn, int stat, int x, int y) {	//функция для кнопок действий, триггерится кликом мыши
 	if (stat == GLUT_DOWN) {
 		if (x > 10 && x < 145 && y >  590 && y < 610) {
 			graph.Print();
@@ -434,7 +434,7 @@ void mouseClick(int btn, int stat, int x, int y) {	//ôóíêöèÿ äëÿ êí�
 	}
 	glutPostRedisplay();
 }
-void display() {	//Ôóíêöèÿ îòîáðàæåíèÿ ãëàâíîãî îêíà
+void display() {	//Функция отображения главного окна
 	glShadeModel(GL_SMOOTH);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
